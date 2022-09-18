@@ -1,0 +1,74 @@
+body {
+    padding: 0;
+    margin: 0;
+
+    color: white;
+    background-color: black;
+    font-size: 1.3rem;
+}
+
+.bgImage {
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url("https://external-preview.redd.it/1X8WRDqP1uR8kScww3bOJws-sL2gx7juKAvergG2liU.jpg?auto=webp&s=8a0e68259fdd293dcf53f78db3e8b452e0fa41b5");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: 10%;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+table, th, td {
+    text-align: center;
+    border: 2px solid white;
+    border-collapse: collapse;
+}
+
+tr, td, th {
+    padding: 5px 25px;
+}
+
+#myVideo {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+.tableData {
+    margin: 20px;
+    box-shadow: 1px 1px 100px 200px rgba(0, 0, 0, 0.798);
+}
+
+ table {
+    position: absolute;
+    box-shadow:inset -1px 10px 100px 10px rgba(46, 87, 143, 0.389);
+}
+
+.registrarJogador {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+
+}
+
+button, input  {
+    border: 1.5px solid #fff;
+    border-radius: 15px;
+
+    padding: 10px;
+    color: #fff;
+    background-color: #000;
+}
+
+button {
+    background-image:linear-gradient(to bottom, rgb(53, 145, 244), rgb(48, 120, 213),rgba(36, 36, 226, 0.603));
+}
+
+.adicionar {
+    background-color: crimson;
+    padding: 10px;
+}

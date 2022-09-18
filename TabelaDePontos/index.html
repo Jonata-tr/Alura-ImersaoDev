@@ -1,0 +1,46 @@
+<!-- "https://external-preview.redd.it/iI77b4PixRSgMJVmi-K5UEAPyMp-hlWprs-hsuZ1f6c.jpg?width=640&crop=smart&auto=webp&s=11f8ebdc6c572f45c26fac47e4c59ea1786bc7db" -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+     <!--This header links the html and css file.-->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <title>TABELADEPONTOS!</title>
+
+</head>
+
+<body>
+    <script src="./JavaScipt/script.js"></script>
+
+    <main>
+        <div class="bgImage"></div>
+        <div class="content">
+            <div class="tableData">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Jogador</th>
+                            <th>Vitorias</th>
+                            <th>Derrotas</th>
+                            <th>Empates</th>
+                            <th>Pontos</th>
+                            <th>Adicionar Vitoria</th>
+                            <th>Adicionar Derrota</th>
+                            <th>Adicionar Empate</th>
+                        </tr>
+                    </thead>
+                    <tbody id="placarPontos">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="registrarJogador">
+            <input id="input" name="array[]" type="text" !required>
+            <button id="butao" onclick="adicionarJogador()" type="submit">Registrar Jogador</button>
+        </div>
+    </main>
+
+</body>
+</html>
