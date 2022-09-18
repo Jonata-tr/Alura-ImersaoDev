@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <title>AluraFLIX</title> 
+    </head>
+    <body>
+        <script src="javaScript/js.js"></script>
+
+        <div class="bgImage"></div>
+        <main>
+            
+            <section>
+                <div class="header">
+                    <h1>ALURA<span>FLIX</span></h1>
+                    <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-aluraflix.svg" alt="logoImersãoDev" width="380px">
+                   
+                </div>
+            </section>
+
+            <section>
+                <div class="content">
+                    <p>
+                        Digite o link da imagem que deseja adicionar.
+                    </p>
+                    <br>
+                    <input type="text" id="filmes" placeholder="Digite o link da imagem..." required>
+                    <br>
+                    <button id="adicionar" cursor="pointer" onclick="filmeAdicionar()">Adicionar imagem</button>
+                </div>
+            </section>
+
+            <section>
+                <div id="imagesDiv">
+                </div>
+            </section>
+
+            <section>
+                <div class="footer">
+                    <br>
+                    <input type="number" id="removerFilmes" placeholder="Qual filme deseja remover?">
+                    <button id="remover" onclick="removerFilme()">Remover Filme</button>
+                    <p>
+                        Digite o numero da posição do filme que deseja remover.
+                    </p>
+                </div>  
+            </section>
+
+        </main>
+    </body>
+</html>

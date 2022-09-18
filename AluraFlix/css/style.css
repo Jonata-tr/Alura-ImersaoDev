@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding:0;
+    
+    background-color: #000;
+    color: #fff;
+
+    font-family: monospace;
+    text-align: center;
+}
+
+span {
+    color: red;
+}
+
+.bgImage {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1px;
+    display: block;
+    height: 100vh;
+    width: 100vw;
+
+    background-image: url(../img/2227118.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(3px);
+}
+
+main{
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    margin-bottom: 2px;
+}
+
+.header h1{
+    text-shadow:1px 1px 1px #000,
+                1px 1px 1px #000;
+    font-size: 3rem;
+    margin: 25px 0 10px;
+}
+
+.content {
+    text-shadow:1px 1px 1px #000,
+                1px 1px 1px #000;
+    font-size: 1.5rem;
+   
+}
+
+.content p {
+    margin-bottom: 0;
+}
+
+.footer {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+}
+
+input, button {
+    border-radius: 13px;
+}
+
+input {
+    padding: 15px 60px 10px 5px;
+    text-align: left;
+    margin: 0 0 5px;
+    border: none;    
+}
+
+#adicionar {
+    background-color: red;
+    color: white;
+    padding: 15px 58px;
+    border: 1.5px solid #000;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#adicionar:hover 
+{
+    color: gold;
+}
+
+#removerFilmes {
+    padding: 0 ;
+    width: 130px;
+    height: 30px;
+    text-align: center;
+}
+
+#remover {
+    background-color: red;
+    padding: 8px 10px;
+    color: #fff;
+    border: 1.5px solid black;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#imagesDiv {
+    padding: 10px 230px;   
+    position: absolute;
+    left: 100px;
+
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: left;
+    margin: 0;
+}
+
+#imagesDiv img {
+    border: 2.5px solid black;
+    width: 300px;
+    height: 420px;
+}
+
+.imgUniqueDiv{
+    padding: 10px;
+}
