@@ -65,6 +65,7 @@ button, input  {
 }
 
 button {
+    cursor: pointer;
     background-image:linear-gradient(to bottom, rgb(53, 145, 244), rgb(48, 120, 213),rgba(36, 36, 226, 0.603));
 }
 

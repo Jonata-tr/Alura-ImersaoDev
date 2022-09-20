@@ -1,17 +1,37 @@
-var listaJogadores =[]
 
-var player = { nome: "", vitorias: 2, derrotas: 0, empates: 1, pontos: 0 };
+var jogador1 = {nome:"", vitorias: 0, derrotas: 0, empates:0, pontos:0 }
+var jogador2 = {nome:"", vitorias: 0, derrotas: 0, empates:0, pontos:0 }
+var jogador3 = {nome:"", vitorias: 0, derrotas: 0, empates:0, pontos:0 }
+var jogador4 = {nome:"", vitorias: 0, derrotas: 0, empates:0, pontos:0 }
 
-function adicionarJogador() {
-  var jogador =  document.getElementsByName('array[]');
-  player.nome = jogador;
-  listaJogadores.push(player)
-  console.log(listaJogadores)
-  document.getElementById("input").value = "";
-  return listaJogadores
+var listaJogadores = [jogador1, jogador2, jogador3, jogador4];
+
+
+function calcularPontos(jogador) {
+  var classificação = jogador.vitorias * 3 + jogador.empates;
+  console.log(jogador.pontos)
+  jogador.pontos = classificação;
 }
 
-imprimirJogadoresNaTela(listaJogadores);
+jogador1.pontos = calcularPontos(jogador1);
+jogador2.pontos = calcularPontos(jogador2);
+jogador3.pontos = calcularPontos(jogador3);
+jogador4.pontos = calcularPontos(jogador4);
+
+var indice = 0;
+
+function adicionarJogador() {
+  var jogador = document.getElementById("input").value;
+  console.log(listaJogadores);
+  if (indice < listaJogadores.length) {
+    listaJogadores[indice].nome = jogador;
+    imprimirJogadoresNaTela(listaJogadores);
+    indice++;
+    return indice;
+  } else if(indice == listaJogadores.length) {
+    window.alert("Numero maximo de jogadores atingido.");
+  }
+}
 
 function imprimirJogadoresNaTela(listaJogadores) {
   var tabela = "";
@@ -22,35 +42,24 @@ function imprimirJogadoresNaTela(listaJogadores) {
     tabela += "<td>" + listaJogadores[i].empates + "</td>";
     tabela += "<td>" + listaJogadores[i].pontos + "</td>";
     tabela +=
-      "<td><button class='adicionar' type='submit' onClick ='adicionarVitoria(" +
-      i +
-      ")'>Adicionar</button></td>";
+    "<td><button class='adicionar' type='submit' onClick ='adicionarVitoria(" +
+    i +
+    ")'>Adicionar</button></td>";
     tabela +=
       "<td><button class='adicionar' type='submit' onClick ='adicionarDerrota(" +
       i +
       ")'>Adicionar</button></td>";
-    tabela +=
+      tabela +=
       "<td><button class='adicionar' type='submit' onClick ='adicionarEmpate(" +
       i +
       ")'>Adicionar</button></td>";
-
-    console.log(tabela);
+    }
+    var table = document.getElementById("placarPontos");
+    table.innerHTML = tabela;
   }
 
-  var table = document.getElementById("placarPontos");
-  table.innerHTML = tabela;
-}
-
-calcularPontos(listaJogadores);
-
-function calcularPontos(pontosJogador) {
-  var classificação = player.vitorias * 3 + player.empates;
-  player.pontos = classificação;
-  console.log(classificação);
-}
-
 function adicionarVitoria(i) {
-  var jogador = listaJogadores[i];
+  var jogador= listaJogadores[i];
   jogador.vitorias++;
   jogador.pontos = calcularPontos(jogador);
   imprimirJogadoresNaTela(listaJogadores);
