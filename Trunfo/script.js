@@ -36,11 +36,11 @@ var cartas = [
   }),
 
   (carta5 = {
-    nome: "Broly (normal)",
+    nome: "Nami",
     atributos: {
-      ataque: 7,
-      defesa: 20,
-      magia: 1,
+      ataque: 11,
+      defesa: 5,
+      agilidade: 8,
     },
   }),
 
@@ -61,6 +61,7 @@ function sortearCarta() {
   cartaMaquina = cartas[parseInt(Math.random() * 6)];
 
   // SorteioCartasDoJogador
+
   cartaJogador = cartas[parseInt(Math.random() * 6)];
   while (cartaJogador == cartaMaquina) {
     cartaJogador = cartas[parseInt(Math.random() * 6)];
@@ -68,9 +69,30 @@ function sortearCarta() {
 
   document.getElementById("btnSortear").disabled = true;
   document.getElementById("btnJogar").disabled = false;
+  imagens(cartaJogador, cartaMaquina)
+}
+
+// Amostra a imagem da carta e chama as opções
+
+function imagens() {
+  var imagem = document.getElementById("imagemDaCarta");
+  var imagemInimigo = document.getElementById("imagemDaCartaInimigo");
+  imagem.innerHTML = cartaJogador.imagem
+  imagemInimigo.innerHTML = cartaMaquina.imagem
+  
+  var nomeCarta = document.getElementById("nomeDaCarta");
+  var nomeInimigo = document.getElementById("nomeDaCartaInimigo");
+  console.log(cartaJogador.nome)
+  nomeCarta.innerHTML = `<h1>${cartaJogador.nome}</h1>`
+  nomeInimigo.innerHTML = `<h1>${cartaMaquina.nome}</h1>`
   exibirOpcoes(cartaJogador);
 }
 
+// Imprimi o nome das cartas na tela
+function nomes(){
+}
+
+// Imprime os radios dos atributos
 function exibirOpcoes() {
   var opcoes = document.getElementById("opcoes");
   var opcoesTexto = "";
@@ -82,6 +104,7 @@ function exibirOpcoes() {
   opcoes.innerHTML = opcoesTexto;
 }
 
+
 function obtemAtributoSelecionado() {
   var radio = document.getElementsByName("atributo");
 
@@ -90,10 +113,27 @@ function obtemAtributoSelecionado() {
       return radio[i].value
     }
   }
-
 }
 
 function jogar() {
   var atributoSelecionado = obtemAtributoSelecionado()
-  console.log(atributoSelecionado);
+  var elementoResultado = document.getElementById("resultado")
+
+  var valorCartaJogador = cartaJogador.atributos[atributoSelecionado]
+  var valorCartaMaquina = cartaMaquina.atributos[atributoSelecionado]
+
+  if (valorCartaJogador > valorCartaMaquina) {
+    elementoResultado.innerHTML = "GANHOU!!!!!!!!" 
+  } else if(valorCartaJogador < valorCartaMaquina) {
+    elementoResultado.innerHTML = "PERDEU!!"
+  } else {
+    elementoResultado.innerHTML = "Empate!!"
+  }
+
+  console.log(valorCartaMaquina)
+}
+
+// Altera as cartas selecionadas do jogo
+function resetar() {
+  sortearCarta()
 }

@@ -8,6 +8,9 @@ body {
     background-repeat: no-repeat;
     padding-bottom: 20vh;
     color:#fff;
+
+    text-align: center;
+    overflow-y: hidden;
 }
 
 .container {
@@ -117,4 +120,48 @@ form {
 
 .carta-status p {
     margin-bottom: 2rem;
+}
+
+#imagemDaCarta img{
+    position: absolute;
+    top: 375px;
+    left: 65px;
+    width:290px;
+    height: 220px;
+    background-color: red;
+}
+
+#nomeDaCarta {
+    width: 350px;
+    position: absolute;
+    z-index: 9999;
+    top: 570px;
+    left: 33px;
+    text-align: center;
+    
+}
+
+#imagemDaCartaInimigo img{
+    position: absolute;
+    top: 375px;
+    right: 65px;
+    width:290px;
+    height: 220px;
+    background-color: red;
+}
+
+#nomeDaCartaInimigo {
+    position: absolute;
+    width: 350px;
+    z-index: 9999;
+    top: 570px;
+    right: 33px;
+    text-align: center;
+    
+}
+
+#deNovo {
+    position: absolute;
+    top: 25px;
+    left: 50px;
 }
